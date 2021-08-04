@@ -10,14 +10,17 @@ import UIKit
 private let reuseIdentifier = "Cell"
 public var labels = ["A", "B", "C", "D", "E", "F", "G", "H"]
 public var labelLength = labels.count
+public var measure = Double(screenWidth) / 2
+public var screenWidth: CGFloat {
+    return UIScreen.main.bounds.width
+}
 
 class CollectionViewController: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! CollectionViewCell
-        
-        cell.setLabel(label: labels[indexPath.row])
+        cell.setProgressView()
+//        cell.setLabel(label: labels[indexPath.row])
         return cell
     }
     
@@ -37,6 +40,11 @@ class CollectionViewController: UICollectionView, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width: 200, height: 200)
+        measure = collectionView.frame.size.width
+        let measurement = collectionView.frame.size.width / 2
+        return CGSize(width: measurement, height: measurement)
     }
+    
+    
+    
 }

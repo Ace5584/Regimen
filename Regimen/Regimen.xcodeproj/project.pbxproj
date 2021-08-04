@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482E677526BAA88600FBE693 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E677426BAA88600FBE693 /* CircularProgressBar.swift */; };
 		48A3F15526A8F0F400DD717D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15426A8F0F400DD717D /* AppDelegate.swift */; };
 		48A3F15726A8F0F400DD717D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15626A8F0F400DD717D /* SceneDelegate.swift */; };
 		48A3F15926A8F0F400DD717D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15826A8F0F400DD717D /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		482E677426BAA88600FBE693 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		48A3F15126A8F0F400DD717D /* Regimen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Regimen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A3F15426A8F0F400DD717D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A3F15626A8F0F400DD717D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				48A3F16226A8F0F600DD717D /* Info.plist */,
 				48A6C5D426B538620071388D /* CollectionViewController.swift */,
 				48FFBD5226B5ECAC00A836C7 /* CollectionViewCell.swift */,
+				482E677426BAA88600FBE693 /* CircularProgressBar.swift */,
 			);
 			path = Regimen;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				48A3F15926A8F0F400DD717D /* ViewController.swift in Sources */,
 				48A3F15526A8F0F400DD717D /* AppDelegate.swift in Sources */,
 				48A3F15726A8F0F400DD717D /* SceneDelegate.swift in Sources */,
+				482E677526BAA88600FBE693 /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

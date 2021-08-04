@@ -23,9 +23,19 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //        heightConstraint.constant = CGFloat(Double(count) * 44.5)
-        collectionHeight1.constant = CGFloat(Double(labelLength/2 * 210))
+        
+        if (labelLength % 2) != 0 {
+            labelLength += 1
+        }
+        
+        collectionHeight1.constant = CGFloat(measure * Double(Double(labelLength)/Double(2)))
+        print(measure * Double(Double(labelLength)/Double(2)))
+        
+        
         
     }
+    
+    
 //
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return 20
