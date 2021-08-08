@@ -11,14 +11,23 @@ class ViewController: UIViewController{
 
     
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionHeight1: NSLayoutConstraint!
+    @IBOutlet weak var editBtn: UIButton!
     @IBAction func editBtn(_ sender: UIButton) {
-//        let tableViewEditingMode = tableView.isEditing
-//        tableView.setEditing(!tableViewEditingMode, animated: true)
     }
     
-//    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-//    let count = 20
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        collectionView.allowsMultipleSelection = editing
+        let indexPaths = collectionView.indexPathsForVisibleItems
+        for indexPath in indexPaths {
+            let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+            cell.isInEditingMode = editing
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,8 +40,7 @@ class ViewController: UIViewController{
         collectionHeight1.constant = CGFloat(measure * Double(Double(labelLength)/Double(2)))
         print(measure * Double(Double(labelLength)/Double(2)))
         
-        
-        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     
