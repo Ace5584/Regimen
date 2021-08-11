@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     
     var data = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁","🐮", "🐷", "🐸", "🐵", "🐔", "🐧", "🐤", "🐥", "🦆", "🦅", "🦉", "🐺", "🐗", "🐴", "🦄", "🐝", "🪱", "🐛", "🦋", "🐌", "🐞", "🐜", "🦂", "🐍", "🦎", "🦖", "🦕", "🐙", "🦑", "🦐", "🦞", "🦀", "🐡", "🐠", "🐟", "🐬", "🐳", "🐋"]
     
+    let refreshControl = UIRefreshControl()
+    
+    var addText: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,12 +26,18 @@ class ViewController: UIViewController {
         let width = (self.view.frame.size.width - CGFloat((numOfColumn - 1)*10)) / CGFloat(numOfColumn)
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
+        
+        refreshControl.addTarget(self, action: #selector(appendNewItem), for: UIControl.Event.valueChanged)
+        collectionView.refreshControl = refreshControl
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: Notification.Name("text"), object: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedItem = sender as? String else{
             return
         }
+    
         
         if segue.identifier == "detail" {
             guard let destinationVC = segue.destination as?
@@ -37,6 +47,28 @@ class ViewController: UIViewController {
         
             destinationVC.selectedData = selectedItem
         }
+    }
+    
+    @objc func didGetNotification(_ notification: Notification){
+        var item: String!
+        let text = notification.object as! String?
+        item = text
+        data.append(item)
+        let indexPath = IndexPath(row: data.count-1, section: 0)
+        collectionView.insertItems(at: [indexPath])
+    }
+    
+    @IBAction func insertNewItem() {
+
+        let vc = storyboard?.instantiateViewController(withIdentifier: "add") as! AddViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    @objc func appendNewItem(){
+        data = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁","🐮", "🐷", "🐸", "🐵", "🐔", "🐧", "🐤", "🐥", "🦆", "🦅", "🦉", "🐺", "🐗", "🐴", "🦄", "🐝", "🪱", "🐛", "🦋", "🐌", "🐞", "🐜", "🦂", "🐍", "🦎", "🦖", "🦕", "🐙", "🦑", "🦐", "🦞", "🦀", "🐡", "🐠", "🐟", "🐬", "🐳", "🐋"]
+        collectionView.reloadData()
+        collectionView.refreshControl?.endRefreshing()
     }
 
 }

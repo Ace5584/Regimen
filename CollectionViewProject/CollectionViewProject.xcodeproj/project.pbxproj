@@ -14,6 +14,7 @@
 		48DACFEA26BF32A10009F47B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48DACFE926BF32A10009F47B /* Assets.xcassets */; };
 		48DACFED26BF32A10009F47B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48DACFEB26BF32A10009F47B /* LaunchScreen.storyboard */; };
 		48DACFF526BFE6AF0009F47B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DACFF426BFE6AF0009F47B /* DetailViewController.swift */; };
+		48DACFF926C1FAAE0009F47B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DACFF826C1FAAE0009F47B /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		48DACFEC26BF32A10009F47B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48DACFEE26BF32A10009F47B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48DACFF426BFE6AF0009F47B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		48DACFF826C1FAAE0009F47B /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				48DACFE926BF32A10009F47B /* Assets.xcassets */,
 				48DACFEB26BF32A10009F47B /* LaunchScreen.storyboard */,
 				48DACFEE26BF32A10009F47B /* Info.plist */,
+				48DACFF826C1FAAE0009F47B /* AddViewController.swift */,
 				48DACFF426BFE6AF0009F47B /* DetailViewController.swift */,
 			);
 			path = CollectionViewProject;
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48DACFF926C1FAAE0009F47B /* AddViewController.swift in Sources */,
 				48DACFE526BF329F0009F47B /* ViewController.swift in Sources */,
 				48DACFE126BF329F0009F47B /* AppDelegate.swift in Sources */,
 				48DACFE326BF329F0009F47B /* SceneDelegate.swift in Sources */,

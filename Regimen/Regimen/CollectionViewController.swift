@@ -23,8 +23,6 @@ class CollectionViewController: UICollectionView, UICollectionViewDataSource, UI
         
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! CollectionViewCell
         cell.setProgressView()
@@ -37,6 +35,7 @@ class CollectionViewController: UICollectionView, UICollectionViewDataSource, UI
         self.dataSource = self
         self.delegate = self
     }
+    
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return labels.count

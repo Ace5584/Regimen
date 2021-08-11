@@ -19,9 +19,9 @@ class ViewController: UIViewController{
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        
         collectionView.allowsMultipleSelection = editing
         let indexPaths = collectionView.indexPathsForVisibleItems
+        collectionView.indexPathsForSelectedItems?.forEach({ (indexPaths) in collectionView.deselectItem(at: indexPaths, animated: false)})
         for indexPath in indexPaths {
             let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
             cell.isInEditingMode = editing
@@ -42,24 +42,5 @@ class ViewController: UIViewController{
         
         navigationItem.leftBarButtonItem = editButtonItem
     }
-    
-    
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 20
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-//        cell?.textLabel!.text = "My Name is Alex"
-//        return cell!
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete{
-//            print("Delete")
-//        }
-//    }
-
 }
 
