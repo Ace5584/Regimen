@@ -218,11 +218,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LCA-bz-XeQ">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="trash" id="kK9-cl-9Gc"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="trash" id="kK9-cl-9Gc">
+                            <connections>
+                                <action selector="deleteBtn:" destination="Rhe-gb-Evh" id="S2a-9J-ima"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionHeight1" destination="mWG-Iw-xik" id="vAF-xh-Pz4"/>
                         <outlet property="collectionView" destination="6ZC-Yi-5xA" id="rGp-FO-aQ9"/>
+                        <outlet property="deleteBtn" destination="kK9-cl-9Gc" id="MbU-zs-mtf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EuE-UO-P8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

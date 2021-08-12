@@ -13,13 +13,21 @@ class ViewController: UIViewController{
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionHeight1: NSLayoutConstraint!
-    @IBOutlet weak var editBtn: UIButton!
-    @IBAction func editBtn(_ sender: UIButton) {
+    @IBOutlet weak var deleteBtn: UIBarButtonItem!
+    @IBAction func deleteBtn(_ sender: UIButton) {
+        if let selectedItems = collectionView.indexPathsForSelectedItems{
+            let items = selectedItems.map{$0.item}.sorted().reversed()
+            for item in items {
+                labels.remove(at: item)
+            }
+            collectionView.deleteItems(at: selectedItems)
+        }
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         collectionView.allowsMultipleSelection = editing
+        deleteBtn.isEnabled = editing
         let indexPaths = collectionView.indexPathsForVisibleItems
         collectionView.indexPathsForSelectedItems?.forEach({ (indexPaths) in collectionView.deselectItem(at: indexPaths, animated: false)})
         for indexPath in indexPaths {
@@ -31,7 +39,6 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        heightConstraint.constant = CGFloat(Double(count) * 44.5)
         
         if (labelLength % 2) != 0 {
             labelLength += 1

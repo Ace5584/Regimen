@@ -7,10 +7,10 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 public var labels = ["A", "B", "C"]
 public var labelLength = labels.count
 public var measure = Double(screenWidth) / 2
+
 public var screenWidth: CGFloat {
     return UIScreen.main.bounds.width
 }
