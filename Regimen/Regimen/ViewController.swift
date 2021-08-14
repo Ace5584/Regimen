@@ -37,12 +37,30 @@ class ViewController: UIViewController{
         }
     }
     
+    @objc func didGetNotification(_ notification: Notification){
+        var item: String!
+        let text = notification.object as! String?
+        item = text
+        labels.append(item)
+        let indexPath = IndexPath(row: labels.count-1, section: 0)
+        collectionView.insertItems(at: [indexPath])
+        changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
+    }
+    
+    @IBAction func addNewITem(){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "addItem") as! AddItemViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
         
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: Notification.Name("Text"), object: nil)
     }
     
     private func changeConstraint(Constraint: NSLayoutConstraint, LabelLength: Int, ScreenWidth: CGFloat){

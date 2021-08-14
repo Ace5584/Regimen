@@ -15,9 +15,7 @@ public var screenWidth: CGFloat {
     return UIScreen.main.bounds.width
 }
 
-class CollectionViewController: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
-    @IBOutlet weak var deleteBtn : UIBarButtonItem!
+class CollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     @IBAction func deleteItem(_ sender: Any) {
         

@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		482E677526BAA88600FBE693 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E677426BAA88600FBE693 /* CircularProgressBar.swift */; };
+		48754CE026C7633400CDAC99 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48754CDF26C7633400CDAC99 /* AddItemViewController.swift */; };
 		48A3F15526A8F0F400DD717D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15426A8F0F400DD717D /* AppDelegate.swift */; };
 		48A3F15726A8F0F400DD717D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15626A8F0F400DD717D /* SceneDelegate.swift */; };
 		48A3F15926A8F0F400DD717D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15826A8F0F400DD717D /* ViewController.swift */; };
 		48A3F15C26A8F0F400DD717D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A3F15A26A8F0F400DD717D /* Main.storyboard */; };
 		48A3F15E26A8F0F600DD717D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A3F15D26A8F0F600DD717D /* Assets.xcassets */; };
 		48A3F16126A8F0F600DD717D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A3F15F26A8F0F600DD717D /* LaunchScreen.storyboard */; };
-		48A6C5D526B538620071388D /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C5D426B538620071388D /* CollectionViewController.swift */; };
+		48A6C5D526B538620071388D /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C5D426B538620071388D /* CollectionView.swift */; };
 		48FFBD5326B5ECAC00A836C7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFBD5226B5ECAC00A836C7 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		482E677426BAA88600FBE693 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		48754CDF26C7633400CDAC99 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		48A3F15126A8F0F400DD717D /* Regimen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Regimen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A3F15426A8F0F400DD717D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A3F15626A8F0F400DD717D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +30,7 @@
 		48A3F15D26A8F0F600DD717D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48A3F16026A8F0F600DD717D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48A3F16226A8F0F600DD717D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48A6C5D426B538620071388D /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		48A6C5D426B538620071388D /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		48FFBD5226B5ECAC00A836C7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,9 +71,10 @@
 				48A3F15D26A8F0F600DD717D /* Assets.xcassets */,
 				48A3F15F26A8F0F600DD717D /* LaunchScreen.storyboard */,
 				48A3F16226A8F0F600DD717D /* Info.plist */,
-				48A6C5D426B538620071388D /* CollectionViewController.swift */,
+				48A6C5D426B538620071388D /* CollectionView.swift */,
 				48FFBD5226B5ECAC00A836C7 /* CollectionViewCell.swift */,
 				482E677426BAA88600FBE693 /* CircularProgressBar.swift */,
+				48754CDF26C7633400CDAC99 /* AddItemViewController.swift */,
 			);
 			path = Regimen;
 			sourceTree = "<group>";
@@ -148,9 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FFBD5326B5ECAC00A836C7 /* CollectionViewCell.swift in Sources */,
-				48A6C5D526B538620071388D /* CollectionViewController.swift in Sources */,
+				48A6C5D526B538620071388D /* CollectionView.swift in Sources */,
 				48A3F15926A8F0F400DD717D /* ViewController.swift in Sources */,
 				48A3F15526A8F0F400DD717D /* AppDelegate.swift in Sources */,
+				48754CE026C7633400CDAC99 /* AddItemViewController.swift in Sources */,
 				48A3F15726A8F0F400DD717D /* SceneDelegate.swift in Sources */,
 				482E677526BAA88600FBE693 /* CircularProgressBar.swift in Sources */,
 			);
