@@ -229,6 +229,7 @@
                         <outlet property="collectionHeight1" destination="mWG-Iw-xik" id="vAF-xh-Pz4"/>
                         <outlet property="collectionView" destination="6ZC-Yi-5xA" id="rGp-FO-aQ9"/>
                         <outlet property="deleteBtn" destination="kK9-cl-9Gc" id="MbU-zs-mtf"/>
+                        <outlet property="scrollView" destination="TAf-PV-rvI" id="nP0-Y2-HJh"/>
                         <outlet property="timeLabel" destination="ypt-5b-aTg" id="Wsg-hN-S3X"/>
                     </connections>
                 </viewController>

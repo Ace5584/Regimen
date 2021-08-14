@@ -9,6 +9,9 @@ import UIKit
 
 class HomePageViewController: UIViewController{
     
+    // Main Scroll View that hosts everything in this view controller
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     // Collection View that contains progress bar cells
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -18,7 +21,11 @@ class HomePageViewController: UIViewController{
     // Button used to delete circular progress bar cells in collection view
     @IBOutlet weak var deleteBtn: UIBarButtonItem!
     
+    // Label that displays the date
     @IBOutlet weak var timeLabel: UILabel!
+    
+    // Refresh control constant for Scroll view
+    let refreshControl = UIRefreshControl()
     
     // Deletes selected circular progress bar cells from collection view
     // Change height of collection view to accomendate the change
@@ -33,11 +40,14 @@ class HomePageViewController: UIViewController{
         }
     }
     
+    // Function that runs when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Changing the height of the collection view according to the amount of cells present
         changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
         
+        // Adding edit button item on navigation bar
         navigationItem.leftBarButtonItem = editButtonItem
         
         // Observe Notifications from AddItemViewController
@@ -45,6 +55,10 @@ class HomePageViewController: UIViewController{
         
         // Current Date and time
         refreshTime(Label: timeLabel)
+        
+        // Controls the refresh of the scroll view
+        refreshControl.addTarget(self, action: #selector(refreshPage), for: UIControl.Event.valueChanged)
+        scrollView.refreshControl = refreshControl
     }
     
     // overrides default set editing function
@@ -74,6 +88,15 @@ class HomePageViewController: UIViewController{
         changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
     }
     
+    // things to do when refresh the page
+    @objc func refreshPage(){
+        refreshTime(Label: timeLabel)
+        collectionView.reloadData()
+        collectionView.refreshControl?.endRefreshing()
+        scrollView.refreshControl?.endRefreshing()
+    }
+    
+    // Action when add button is clicked
     @IBAction func addNewITem(){
         let vc = storyboard?.instantiateViewController(withIdentifier: "addItem") as! AddItemViewController
         vc.modalPresentationStyle = .fullScreen
@@ -87,6 +110,7 @@ class HomePageViewController: UIViewController{
         Constraint.constant = CGFloat((ScreenWidth/2) * Double(Double(lb)/Double(2)))
     }
     
+    // Function that refreshes the time, taking in the label to display the time on
     private func refreshTime(Label: UILabel){
         let currentDateTime = Date()
         let formatter = DateFormatter()
