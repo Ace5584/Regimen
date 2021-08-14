@@ -7,7 +7,7 @@
 
 import UIKit
 
-public var labels = ["A", "B", "C"]
+public var labels = ["A", "B", "C", "D", "E"]
 public var labelLength = labels.count
 public var measure = Double(screenWidth) / 2
 

@@ -21,6 +21,7 @@ class ViewController: UIViewController{
                 labels.remove(at: item)
             }
             collectionView.deleteItems(at: selectedItems)
+            changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
         }
     }
     
@@ -39,15 +40,15 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        if (labelLength % 2) != 0 {
-            labelLength += 1
-        }
-        
-        collectionHeight1.constant = CGFloat(measure * Double(Double(labelLength)/Double(2)))
-        print(measure * Double(Double(labelLength)/Double(2)))
+        changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
         
         navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    private func changeConstraint(Constraint: NSLayoutConstraint, LabelLength: Int, ScreenWidth: CGFloat){
+        var lb = LabelLength
+        if (lb % 2) != 0 { lb += 1 }
+        Constraint.constant = CGFloat((ScreenWidth/2) * Double(Double(lb)/Double(2)))
     }
 }
 
