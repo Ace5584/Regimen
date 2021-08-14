@@ -27,18 +27,8 @@ class HomePageViewController: UIViewController{
     // Refresh control constant for Scroll view
     let refreshControl = UIRefreshControl()
     
-    // Deletes selected circular progress bar cells from collection view
-    // Change height of collection view to accomendate the change
-    @IBAction func deleteBtn(_ sender: UIButton) {
-        if let selectedItems = collectionView.indexPathsForSelectedItems{
-            let items = selectedItems.map{$0.item}.sorted().reversed()
-            for item in items {
-                labels.remove(at: item)
-            }
-            collectionView.deleteItems(at: selectedItems)
-            changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
-        }
-    }
+    // View that enables when there's nothing in collection view
+    @IBOutlet weak var noActivityView: UIView!
     
     // Function that runs when the view is loaded
     override func viewDidLoad() {
@@ -59,6 +49,19 @@ class HomePageViewController: UIViewController{
         // Controls the refresh of the scroll view
         refreshControl.addTarget(self, action: #selector(refreshPage), for: UIControl.Event.valueChanged)
         scrollView.refreshControl = refreshControl
+    }
+    
+    // Deletes selected circular progress bar cells from collection view
+    // Change height of collection view to accomendate the change
+    @IBAction func deleteBtn(_ sender: UIButton) {
+        if let selectedItems = collectionView.indexPathsForSelectedItems{
+            let items = selectedItems.map{$0.item}.sorted().reversed()
+            for item in items {
+                labels.remove(at: item)
+            }
+            collectionView.deleteItems(at: selectedItems)
+            changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
+        }
     }
     
     // overrides default set editing function
@@ -108,6 +111,12 @@ class HomePageViewController: UIViewController{
         var lb = LabelLength
         if (lb % 2) != 0 { lb += 1 }
         Constraint.constant = CGFloat((ScreenWidth/2) * Double(Double(lb)/Double(2)))
+        if(LabelLength == 0){
+            noActivityView.isHidden = false
+        }
+        else{
+            noActivityView.isHidden = true
+        }
     }
     
     // Function that refreshes the time, taking in the label to display the time on
