@@ -52,7 +52,7 @@
         <!--Home Page-->
         <scene sceneID="f6b-1u-t1b">
             <objects>
-                <viewController id="Rhe-gb-Evh" customClass="ViewController" customModule="Regimen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rhe-gb-Evh" customClass="HomePageViewController" customModule="Regimen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wYt-q8-7Vs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

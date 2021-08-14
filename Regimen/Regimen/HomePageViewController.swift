@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class HomePageViewController: UIViewController{
     
     // Collection View that contains progress bar cells
     @IBOutlet weak var collectionView: UICollectionView!
