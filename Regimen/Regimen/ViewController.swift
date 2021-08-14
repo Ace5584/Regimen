@@ -8,12 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController{
-
     
-    
+    // Collection View that contains progress bar cells
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // constraint height of the view controller that contains progress bar cells
     @IBOutlet weak var collectionHeight1: NSLayoutConstraint!
+    
+    // Button used to delete circular progress bar cells in collection view
     @IBOutlet weak var deleteBtn: UIBarButtonItem!
+    
+    // Deletes selected circular progress bar cells from collection view
+    // Change height of collection view to accomendate the change
     @IBAction func deleteBtn(_ sender: UIButton) {
         if let selectedItems = collectionView.indexPathsForSelectedItems{
             let items = selectedItems.map{$0.item}.sorted().reversed()
@@ -25,6 +31,8 @@ class ViewController: UIViewController{
         }
     }
     
+    // overrides default set editing function
+    // Enables editing when navigation button edit is selected
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         collectionView.allowsMultipleSelection = editing
@@ -37,6 +45,9 @@ class ViewController: UIViewController{
         }
     }
     
+    // Object function that activates once recieved notification from AddItemViewController
+    // Creates a new cell with text recieved
+    // Changes the height of the constraint on Collection view
     @objc func didGetNotification(_ notification: Notification){
         var item: String!
         let text = notification.object as! String?
@@ -55,14 +66,16 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
         
         navigationItem.leftBarButtonItem = editButtonItem
         
+        // Observe Notifications from AddItemViewController
         NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: Notification.Name("Text"), object: nil)
     }
     
+    // Changes the Constraint for Table Views with Circular Progress Bar Cells
     private func changeConstraint(Constraint: NSLayoutConstraint, LabelLength: Int, ScreenWidth: CGFloat){
         var lb = LabelLength
         if (lb % 2) != 0 { lb += 1 }
