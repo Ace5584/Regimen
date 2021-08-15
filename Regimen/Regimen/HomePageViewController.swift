@@ -34,6 +34,16 @@ class HomePageViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Checking if Labels key exist, if it does, update labels with the existing key
+        // If it does not exist, create key that stores the label
+        if(isKeyPresentInUserDefaults(key: "Labels")){
+            labels = (defaults.object(forKey: "Labels") as? Array<String>)!
+            print((defaults.object(forKey: "Labels") as? Array<String>)!)
+        }
+        else{
+            defaults.set(labels, forKey: "Labels")
+        }
+        
         // Changing the height of the collection view according to the amount of cells present
         changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
         
@@ -117,6 +127,7 @@ class HomePageViewController: UIViewController{
         else{
             noActivityView.isHidden = true
         }
+        defaults.set(labels, forKey: "Labels")
     }
     
     // Function that refreshes the time, taking in the label to display the time on
@@ -126,6 +137,10 @@ class HomePageViewController: UIViewController{
         formatter.dateStyle = .long
         let dateTimeString = formatter.string(from: currentDateTime)
         Label.text = dateTimeString
+    }
+    
+    private func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return defaults.object(forKey: key) != nil
     }
 }
 

@@ -7,7 +7,8 @@
 
 import UIKit
 
-public var labels = ["A", "B", "C", "D", "E"]
+public let defaults = UserDefaults.standard
+public var labels = [String]()
 public var labelLength = labels.count
 public var measure = Double(screenWidth) / 2
 
@@ -16,10 +17,6 @@ public var screenWidth: CGFloat {
 }
 
 class CollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
-    @IBAction func deleteItem(_ sender: Any) {
-        
-    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! CollectionViewCell
