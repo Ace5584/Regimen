@@ -104,9 +104,11 @@ class HomePageViewController: UIViewController{
     }
     
     @objc func enableDetailScene(_ notification: Notification){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
-        vc.modalPresentationStyle = .popover
-        present(vc, animated: true)
+        if(isEditing != true){
+            let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+            vc.modalPresentationStyle = .popover
+            present(vc, animated: true)
+        }
     }
     
     // things to do when refresh the page
