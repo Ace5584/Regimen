@@ -270,6 +270,33 @@
             </objects>
             <point key="canvasLocation" x="-558" y="1306"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Thz-2I-GvZ">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="Bwc-sw-RId" customClass="DetailViewController" customModule="Regimen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RwY-4v-8nD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF3-z1-agh">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c9Q-QN-18K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HF3-z1-agh" firstAttribute="centerX" secondItem="RwY-4v-8nD" secondAttribute="centerX" id="6Sn-uy-Wsf"/>
+                            <constraint firstItem="HF3-z1-agh" firstAttribute="centerY" secondItem="RwY-4v-8nD" secondAttribute="centerY" id="zq1-1O-E2L"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="if1-qx-Eh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1343" y="1967"/>
+        </scene>
         <!--Add Item View Controller-->
         <scene sceneID="YAU-qK-Tfd">
             <objects>

@@ -53,6 +53,8 @@ class HomePageViewController: UIViewController{
         // Observe Notifications from AddItemViewController
         NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: Notification.Name("Text"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(enableDetailScene(_:)), name: Notification.Name("Detail"), object: nil)
+        
         // Current Date and time
         refreshTime(Label: timeLabel)
         
@@ -101,6 +103,12 @@ class HomePageViewController: UIViewController{
         changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
     }
     
+    @objc func enableDetailScene(_ notification: Notification){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+        vc.modalPresentationStyle = .popover
+        present(vc, animated: true)
+    }
+    
     // things to do when refresh the page
     @objc func refreshPage(){
         refreshTime(Label: timeLabel)
@@ -141,6 +149,12 @@ class HomePageViewController: UIViewController{
     
     private func isKeyPresentInUserDefaults(key: String) -> Bool {
         return defaults.object(forKey: key) != nil
+    }
+    
+    public func displayDetailViewController(){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as! AddItemViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 }
 
