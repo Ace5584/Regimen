@@ -10,6 +10,7 @@
 		482E677526BAA88600FBE693 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482E677426BAA88600FBE693 /* CircularProgressBar.swift */; };
 		48754CE026C7633400CDAC99 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48754CDF26C7633400CDAC99 /* AddItemViewController.swift */; };
 		4890A9B026C9DCFB006A1E6C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890A9AF26C9DCFB006A1E6C /* DetailViewController.swift */; };
+		4898CB2A26CE503300AAFE12 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4898CB2926CE503300AAFE12 /* SettingsTableViewController.swift */; };
 		48A3F15526A8F0F400DD717D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15426A8F0F400DD717D /* AppDelegate.swift */; };
 		48A3F15726A8F0F400DD717D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15626A8F0F400DD717D /* SceneDelegate.swift */; };
 		48A3F15926A8F0F400DD717D /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15826A8F0F400DD717D /* HomePageViewController.swift */; };
@@ -24,6 +25,7 @@
 		482E677426BAA88600FBE693 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		48754CDF26C7633400CDAC99 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		4890A9AF26C9DCFB006A1E6C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4898CB2926CE503300AAFE12 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		48A3F15126A8F0F400DD717D /* Regimen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Regimen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A3F15426A8F0F400DD717D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A3F15626A8F0F400DD717D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				482E677426BAA88600FBE693 /* CircularProgressBar.swift */,
 				48754CDF26C7633400CDAC99 /* AddItemViewController.swift */,
 				4890A9AF26C9DCFB006A1E6C /* DetailViewController.swift */,
+				4898CB2926CE503300AAFE12 /* SettingsTableViewController.swift */,
 			);
 			path = Regimen;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				48A3F15726A8F0F400DD717D /* SceneDelegate.swift in Sources */,
 				482E677526BAA88600FBE693 /* CircularProgressBar.swift in Sources */,
 				4890A9B026C9DCFB006A1E6C /* DetailViewController.swift in Sources */,
+				4898CB2A26CE503300AAFE12 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
