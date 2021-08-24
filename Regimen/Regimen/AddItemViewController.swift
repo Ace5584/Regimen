@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddItemViewController: UIViewController {
+class AddItemViewController: UIViewController, UITextFieldDelegate{
     
     public var completionHandler: ((String?)->Void)?
     @IBOutlet weak var textField: UITextField!
@@ -18,10 +18,19 @@ class AddItemViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.textField.delegate = self
         // Do any additional setup after loading the view.
     }
 }

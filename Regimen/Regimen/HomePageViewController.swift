@@ -122,7 +122,7 @@ class HomePageViewController: UIViewController{
     // Action when add button is clicked
     @IBAction func addNewITem(){
         let vc = storyboard?.instantiateViewController(withIdentifier: "addItem") as! AddItemViewController
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .popover
         present(vc, animated: true)
     }
     
