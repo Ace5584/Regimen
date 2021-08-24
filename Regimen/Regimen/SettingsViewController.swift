@@ -44,44 +44,32 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func configure(){
         tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 70, bottom: 0, right: 0)
         models.append(Section(title: "General", options: [
-            SettingssOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
+            SettingssOption(title: "Background", icon: UIImage(systemName: "person.crop.artframe"), iconBackgroundColor: .systemCyan){
             print("Selected first cell")
         },
-            SettingssOption(title: "Bluetooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .systemBlue){
-            
-        },
-            SettingssOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
-            
-        },
-            SettingssOption(title: "iCould", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
+            SettingssOption(title: "Color Scheme", icon: UIImage(systemName: "paintpalette.fill"), iconBackgroundColor: .systemRed){
             
         }]))
         
-        models.append(Section(title: "Information", options: [
-            SettingssOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
+        models.append(Section(title: "Privacy", options: [
+            SettingssOption(title: "Personal Information", icon: UIImage(systemName: "person.circle"), iconBackgroundColor: .systemPink){
             
         },
-            SettingssOption(title: "Bluetooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .systemBlue){
+            SettingssOption(title: "Notification", icon: UIImage(systemName: "alarm"), iconBackgroundColor: .systemBlue){
             
         },
-            SettingssOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
+            SettingssOption(title: "Account Information", icon: UIImage(systemName: "person.fill"), iconBackgroundColor: .systemGreen){
             
         },
-            SettingssOption(title: "iCould", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
+            SettingssOption(title: "Permissions", icon: UIImage(systemName: "globe"), iconBackgroundColor: .systemOrange){
             
+        },
+            SettingssOption(title: "Social", icon: UIImage(systemName: "person.3.fill"), iconBackgroundColor: .systemBrown){
+                              
         }]))
         
-        models.append(Section(title: "Apps", options: [
-            SettingssOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
-            
-        },
-            SettingssOption(title: "Bluetooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .systemBlue){
-            
-        },
-            SettingssOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
-            
-        },
-            SettingssOption(title: "iCould", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
+        models.append(Section(title: "Advanced", options: [
+            SettingssOption(title: "Data", icon: UIImage(systemName: "lock.laptopcomputer"), iconBackgroundColor: .systemIndigo){
             
         }]))
     }
