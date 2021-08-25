@@ -457,10 +457,10 @@
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="1305.8035714285713"/>
         </scene>
-        <!--View Controller-->
+        <!--Personal View Controller-->
         <scene sceneID="FMP-RN-xuA">
             <objects>
-                <viewController id="jcc-F9-xZI" sceneMemberID="viewController">
+                <viewController id="jcc-F9-xZI" customClass="PersonalViewController" customModule="Regimen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fro-t1-78V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -479,20 +479,25 @@
                                     <segue destination="VLi-0h-unR" kind="show" id="6pF-82-MNP"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFA-EO-VSp">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hFA-EO-VSp">
                                 <rect key="frame" x="107" y="88" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nho-qb-brb">
-                                <rect key="frame" x="186" y="296" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#Region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJQ-zC-h5k">
+                                <rect key="frame" x="176" y="325" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJQ-zC-h5k">
-                                <rect key="frame" x="186" y="325" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljx-s2-ZnJ">
+                                <rect key="frame" x="170" y="361" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="btnPicture:" destination="jcc-F9-xZI" eventType="touchUpInside" id="ivC-Zo-sg6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nho-qb-brb">
+                                <rect key="frame" x="162" y="296" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -502,14 +507,30 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="W8k-gn-eRM" firstAttribute="centerX" secondItem="mal-ZS-T6j" secondAttribute="centerX" id="2Pl-nG-igQ"/>
+                            <constraint firstItem="hFA-EO-VSp" firstAttribute="leading" secondItem="ISC-00-iGc" secondAttribute="leading" constant="107" id="4Hn-Dr-Go8"/>
+                            <constraint firstItem="W8k-gn-eRM" firstAttribute="top" secondItem="Ljx-s2-ZnJ" secondAttribute="bottom" constant="8" symbolic="YES" id="6MG-v8-vya"/>
+                            <constraint firstItem="iJQ-zC-h5k" firstAttribute="centerX" secondItem="Ljx-s2-ZnJ" secondAttribute="centerX" id="CmE-OJ-RI4"/>
+                            <constraint firstItem="iJQ-zC-h5k" firstAttribute="top" secondItem="nho-qb-brb" secondAttribute="bottom" constant="8" symbolic="YES" id="Cn6-Ll-X7J"/>
+                            <constraint firstItem="Ljx-s2-ZnJ" firstAttribute="leading" secondItem="ISC-00-iGc" secondAttribute="leading" constant="170" id="Dqt-dY-HNd"/>
+                            <constraint firstItem="Ljx-s2-ZnJ" firstAttribute="centerX" secondItem="W8k-gn-eRM" secondAttribute="centerX" id="FYI-4K-Yob"/>
+                            <constraint firstItem="hFA-EO-VSp" firstAttribute="top" secondItem="ISC-00-iGc" secondAttribute="top" id="XNb-55-0H7"/>
                             <constraint firstItem="W8k-gn-eRM" firstAttribute="top" secondItem="ISC-00-iGc" secondAttribute="top" constant="316" id="XZr-Pj-hSp"/>
+                            <constraint firstItem="nho-qb-brb" firstAttribute="leading" secondItem="ISC-00-iGc" secondAttribute="leading" constant="162" id="cW9-OX-BhU"/>
+                            <constraint firstItem="iJQ-zC-h5k" firstAttribute="leading" secondItem="ISC-00-iGc" secondAttribute="leading" constant="176" id="d0b-Di-33O"/>
+                            <constraint firstItem="nho-qb-brb" firstAttribute="centerX" secondItem="iJQ-zC-h5k" secondAttribute="centerX" id="it1-CL-Kjs"/>
+                            <constraint firstItem="hFA-EO-VSp" firstAttribute="centerX" secondItem="nho-qb-brb" secondAttribute="centerX" id="jZs-fH-Z0O"/>
                             <constraint firstItem="mal-ZS-T6j" firstAttribute="top" secondItem="W8k-gn-eRM" secondAttribute="bottom" constant="8" symbolic="YES" id="kBt-Bc-yBe"/>
+                            <constraint firstItem="nho-qb-brb" firstAttribute="top" secondItem="hFA-EO-VSp" secondAttribute="bottom" constant="8" symbolic="YES" id="kw5-Aa-bdJ"/>
                             <constraint firstItem="mal-ZS-T6j" firstAttribute="trailing" secondItem="Fro-t1-78V" secondAttribute="trailingMargin" id="sZm-hC-Z1T"/>
                             <constraint firstItem="mal-ZS-T6j" firstAttribute="leading" secondItem="Fro-t1-78V" secondAttribute="leadingMargin" id="uSJ-AW-3VX"/>
+                            <constraint firstItem="Ljx-s2-ZnJ" firstAttribute="top" secondItem="iJQ-zC-h5k" secondAttribute="bottom" constant="15" id="wce-bA-hD2"/>
                             <constraint firstItem="ISC-00-iGc" firstAttribute="bottom" secondItem="mal-ZS-T6j" secondAttribute="bottom" constant="47" id="xrn-A1-7sG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o2W-os-4wg"/>
+                    <connections>
+                        <outlet property="profilePicture" destination="hFA-EO-VSp" id="n7i-kh-xQ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dia-ih-cRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
