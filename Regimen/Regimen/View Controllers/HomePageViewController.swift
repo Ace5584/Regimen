@@ -103,10 +103,9 @@ class HomePageViewController: UIViewController{
     }
     
     @objc func enableDetailScene(_ notification: Notification){
-        if(isEditing != true){
-            let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
-            vc.modalPresentationStyle = .popover
-            present(vc, animated: true)
+        if(isEditing == false){
+            self.performSegue(withIdentifier: "DetailsSegue", sender: self)
+            
         }
     }
     

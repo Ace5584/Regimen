@@ -12,7 +12,6 @@ struct SettingssOption{
     let icon: UIImage?
     let iconBackgroundColor: UIColor
     let handle: (() -> Void)
-
 }
 
 struct Section{
