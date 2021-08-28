@@ -38,7 +38,6 @@ class HomePageViewController: UIViewController{
         // If it does not exist, create key that stores the label
         if(isKeyPresentInUserDefaults(key: "Labels")){
             labels = (defaults.object(forKey: "Labels") as? Array<String>)!
-            print((defaults.object(forKey: "Labels") as? Array<String>)!)
         }
         else{
             defaults.set(labels, forKey: "Labels")

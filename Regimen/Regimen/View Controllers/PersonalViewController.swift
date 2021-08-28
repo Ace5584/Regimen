@@ -17,6 +17,15 @@ class PersonalViewController: UIViewController, UIImagePickerControllerDelegate,
         profilePicture.layer.masksToBounds = true
         profilePicture.layer.borderWidth = 3
         profilePicture.layer.borderColor = UIColor.systemTeal.cgColor
+        
+        if(isKeyPresentInUserDefaults(key: "ProfilePicture")){
+            let data = UserDefaults.standard.object(forKey: "ProfilePicture") as! NSData
+            profilePicture.image = UIImage(data: data as Data)
+        }
+        else{
+            let imageData = profilePicture.image!.pngData()! as NSData
+            defaults.set(imageData, forKey: "ProfilePicture")
+        }
     }
     
     @IBAction func btnPicture(_ sender: Any) {
@@ -30,6 +39,14 @@ class PersonalViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         profilePicture.image = image
+        
+        let imageData = profilePicture.image!.pngData()! as NSData
+        defaults.set(imageData, forKey: "ProfilePicture")
+        
         dismiss(animated: true)
+    }
+    
+    private func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return defaults.object(forKey: key) != nil
     }
 }
