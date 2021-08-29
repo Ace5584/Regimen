@@ -20,6 +20,7 @@
 		48A3F15E26A8F0F600DD717D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A3F15D26A8F0F600DD717D /* Assets.xcassets */; };
 		48A3F16126A8F0F600DD717D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A3F15F26A8F0F600DD717D /* LaunchScreen.storyboard */; };
 		48A6C5D526B538620071388D /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C5D426B538620071388D /* CollectionView.swift */; };
+		48BB827726DAEBB3001FBB15 /* StaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB827626DAEBB3001FBB15 /* StaticTableViewController.swift */; };
 		48FFBD5326B5ECAC00A836C7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFBD5226B5ECAC00A836C7 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		48A3F16026A8F0F600DD717D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48A3F16226A8F0F600DD717D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A6C5D426B538620071388D /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		48BB827626DAEBB3001FBB15 /* StaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		48FFBD5226B5ECAC00A836C7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 		48759E6926D7038200E2E2C3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				48BB827626DAEBB3001FBB15 /* StaticTableViewController.swift */,
 				48A3F15826A8F0F400DD717D /* HomePageViewController.swift */,
 				48850D0526D31C9F0075A8D3 /* SettingsViewController.swift */,
 				48754CDF26C7633400CDAC99 /* AddItemViewController.swift */,
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FFBD5326B5ECAC00A836C7 /* CollectionViewCell.swift in Sources */,
+				48BB827726DAEBB3001FBB15 /* StaticTableViewController.swift in Sources */,
 				48A6C5D526B538620071388D /* CollectionView.swift in Sources */,
 				48A3F15926A8F0F400DD717D /* HomePageViewController.swift in Sources */,
 				48A3F15526A8F0F400DD717D /* AppDelegate.swift in Sources */,

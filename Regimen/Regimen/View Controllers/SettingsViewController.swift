@@ -52,7 +52,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         models.append(Section(title: "Privacy", options: [
             SettingssOption(title: "Personal Information", icon: UIImage(systemName: "person.circle"), iconBackgroundColor: .systemPink){
-            
+            self.performSegue(withIdentifier: "SettingsPersonal", sender: self)
         },
             SettingssOption(title: "Notification", icon: UIImage(systemName: "alarm"), iconBackgroundColor: .systemBlue){
             
@@ -99,10 +99,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let section = models[section]
         return section.title
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
     }
 }
 
