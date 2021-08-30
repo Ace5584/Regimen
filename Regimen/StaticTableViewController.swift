@@ -56,7 +56,7 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
             
         }
         else if indexPath == [1, 2]{
-            
+            self.performSegue(withIdentifier: "DateSelectorSegue", sender: self)
         }
     }
     

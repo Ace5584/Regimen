@@ -492,7 +492,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3XN-Go-7ni">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="exampleCell" id="3XN-Go-7ni">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Txo-0Y-hqp">
@@ -575,7 +575,7 @@
                         <sections>
                             <tableViewSection id="Ck1-gw-Kww">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="Vkp-54-qE0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="147" id="Vkp-54-qE0">
                                         <rect key="frame" x="20" y="18" width="374" height="147"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vkp-54-qE0" id="NB8-tA-HCI">
@@ -616,7 +616,7 @@
                             </tableViewSection>
                             <tableViewSection footerTitle="" id="5bt-He-ack">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="RKM-4s-oi7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChangeProfilePictureCell" rowHeight="45" id="RKM-4s-oi7">
                                         <rect key="frame" x="20" y="201" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKM-4s-oi7" id="g8l-o7-zc5">
@@ -633,7 +633,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="RbT-Ek-9S4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChangeRegionCell" rowHeight="45" id="RbT-Ek-9S4">
                                         <rect key="frame" x="20" y="246" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RbT-Ek-9S4" id="EMQ-Vm-L2o">
@@ -650,7 +650,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="uAO-sC-xI0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChangeDateOfBirthCell" rowHeight="45" id="uAO-sC-xI0">
                                         <rect key="frame" x="20" y="291" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uAO-sC-xI0" id="sK3-0Q-ueU">
@@ -678,11 +678,57 @@
                     <navigationItem key="navigationItem" title="Personal Information" id="Wfk-vi-AvC"/>
                     <connections>
                         <outlet property="profilePicture" destination="TOC-iP-S95" id="goC-eL-fKP"/>
+                        <segue destination="Ia2-ib-znP" kind="popoverPresentation" identifier="DateSelectorSegue" popoverAnchorView="amQ-4r-A8y" id="XwU-pJ-tQN">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JP7-zZ-hlB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2489.8550724637685" y="1980.8035714285713"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="eqU-mi-y1L">
+            <objects>
+                <viewController id="Ia2-ib-znP" customClass="DatePickerViewController" customModule="Regimen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0lc-lo-jQr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eau-A0-edN">
+                                <rect key="frame" x="156" y="106" width="102" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHr-A6-1fn">
+                                <rect key="frame" x="41.5" y="170" width="331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dateTextField:" destination="JTl-Cu-8Bf" eventType="editingDidEnd" id="YnI-dn-3M4"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GVl-vP-ADI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eau-A0-edN" firstAttribute="top" secondItem="GVl-vP-ADI" secondAttribute="top" constant="106" id="Gyb-gY-fyD"/>
+                            <constraint firstItem="aHr-A6-1fn" firstAttribute="centerX" secondItem="Eau-A0-edN" secondAttribute="centerX" id="KIJ-Rn-1EW"/>
+                            <constraint firstItem="Eau-A0-edN" firstAttribute="centerX" secondItem="GVl-vP-ADI" secondAttribute="centerX" id="Pjw-NN-iid"/>
+                            <constraint firstItem="aHr-A6-1fn" firstAttribute="top" secondItem="Eau-A0-edN" secondAttribute="bottom" constant="40" id="b2f-pv-BJE"/>
+                            <constraint firstItem="aHr-A6-1fn" firstAttribute="width" secondItem="0lc-lo-jQr" secondAttribute="width" multiplier="0.8" id="qrc-ji-1bR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6bt-n0-DJG"/>
+                    <connections>
+                        <outlet property="dateTextField" destination="aHr-A6-1fn" id="dsn-jR-czO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xx8-mJ-k9Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JTl-Cu-8Bf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3257.971014492754" y="1980.8035714285713"/>
         </scene>
         <!--History-->
         <scene sceneID="Dw8-7M-1Fl">
