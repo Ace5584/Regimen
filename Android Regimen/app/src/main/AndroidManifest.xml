@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidRegimen">
         <activity android:name=".GridItemActivity"></activity>
-        <activity android:name=".DetailsPage" />
         <activity android:name=".AddTaskPage" />
         <activity android:name=".HomePage">
             <intent-filter>

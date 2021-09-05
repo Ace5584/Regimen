@@ -37,7 +37,7 @@ public class HomePage extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), GridItemActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DetailsPage.class);
                 intent.putExtra("name", fruitNames[position]);
                 intent.putExtra("image", fruitImages[position]);
                 startActivity(intent);
