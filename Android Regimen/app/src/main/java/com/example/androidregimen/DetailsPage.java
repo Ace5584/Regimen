@@ -10,7 +10,6 @@ import android.widget.TextView;
 public class DetailsPage extends AppCompatActivity {
 
     TextView name;
-    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +17,10 @@ public class DetailsPage extends AppCompatActivity {
         setContentView(R.layout.activity_details_page);
 
         name = findViewById(R.id.griddata);
-        image = findViewById(R.id.imageView);
+//        image = findViewById(R.id.imageView);
 
         Intent intent = getIntent();
         name.setText(intent.getStringExtra("name"));
-        image.setImageResource(intent.getIntExtra("image", 0));
+//        image.setImageResource(intent.getIntExtra("image", 0));
     }
 }
