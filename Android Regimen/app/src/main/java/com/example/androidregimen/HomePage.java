@@ -26,6 +26,9 @@ import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.github.lzyzsd.circleprogress.DonutProgress;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -95,6 +98,8 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
+
+
 
         ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -208,11 +213,12 @@ public class HomePage extends AppCompatActivity {
             View view1 = getLayoutInflater().inflate(R.layout.row_data, null);
 
             TextView name = view1.findViewById(R.id.fruits);
+            DonutProgress donutProgress = view1.findViewById(R.id.progress);
 //            ImageView image = view1.findViewById(R.id.images);
             if (gridList.size() != 0) {
-
                 Processor temp = new Processor(gridList.get(position));
                 name.setText(temp.getTitle());
+                donutProgress.setDonut_progress(temp.getPercentage());
             }
 //            image.setImageResource(fruitImages[position]);
             return view1;
