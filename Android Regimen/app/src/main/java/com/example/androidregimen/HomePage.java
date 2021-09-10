@@ -63,6 +63,10 @@ class Processor {
         return Percentage;
     }
 
+    public boolean getIsEqualEveryday() {
+        return Everyday.equals("true");
+    }
+
     public String getEveryday() {
         return Everyday;
     }
@@ -73,6 +77,10 @@ class Processor {
 
     public String getTime() {
         return Time;
+    }
+
+    public boolean isTimeBased() {
+        return Type.equals("Time Based");
     }
 
     public String getType() {
@@ -142,9 +150,8 @@ public class HomePage extends AppCompatActivity {
                 else {
 
                     Intent intent = new Intent(getApplicationContext(), DetailsPage.class);
-                    Processor temp = new Processor(gridList.get(position));
-                    intent.putExtra("name", temp.getTitle());
-                    startActivity(intent);
+                    intent.putExtra("status", gridList.get(position));
+                    someActivityResultLauncher.launch(intent);
                 }
             }
         });
