@@ -36,6 +36,7 @@ import java.util.Collections;
 import java.io.*;
 import java.util.Set;
 
+// Custom class that processes the item in the gridList
 class Processor {
     String item;
   // Title | Percentage | Type | Everyday | Time
@@ -45,6 +46,7 @@ class Processor {
      String Everyday;
      String Time;
 
+     // this initalizer splits the string into pieces of usable data
     public Processor(String s) {
         item = s;
         String[] spt = item.split("[,]");
@@ -55,34 +57,42 @@ class Processor {
         Time = spt[4];
     }
 
+    // Returns the title
     public String getTitle() {
         return Title;
     }
 
+    // Returns the percentage
     public String getPercentage() {
         return Percentage;
     }
 
+    // Returns whether the task is everyday or not in a boolean
     public boolean getIsEqualEveryday() {
         return Everyday.equals("true");
     }
 
+    // Returns the everyday string
     public String getEveryday() {
         return Everyday;
     }
 
+    // Returns the original string
     public String getItem() {
         return item;
     }
 
+    // Returns the time as string
     public String getTime() {
         return Time;
     }
 
+    // Return whether the task is time based or not
     public boolean isTimeBased() {
         return Type.equals("Time Based");
     }
 
+    // Return the type of the task
     public String getType() {
         return Type;
     }
@@ -90,25 +100,31 @@ class Processor {
 
 public class HomePage extends AppCompatActivity {
 
+    // initialize all the variables
     GridView gridView;
     Button btnDelete;
     Button btnEdit;
     ImageButton btnAdd;
     ArrayList<String> delList = new ArrayList<String>();
 
+    // Boolean value that determains whether the grid is in edit mode
     boolean editMode = false;
 
+    // A public static string that contains the key for storing data for gridList
     public static final String LIST = "list";
 
+    // This is a arraylist containing all the items in for the grid view
     public ArrayList<String> gridList = new ArrayList<String>();
 
+    // On create function runs when the app is launched
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
 
-
+        // This is an activity launcher and have custom functions when the certain activity
+        // is completed. It loads the data and refreshes the grid when the activity is done
         ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -119,19 +135,20 @@ public class HomePage extends AppCompatActivity {
                     }
                 });
 
+        // Loads the data from storage to the gridList
         loadData();
 
+        // assigning value and start all the buttons and grid views
         btnDelete = (Button)findViewById(R.id.btnDelete);
         btnEdit = (Button)findViewById(R.id.btnEdit);
         btnAdd = (ImageButton) findViewById(R.id.btnAdd);
-
         gridView = findViewById(R.id.gridView);
-
         CustomAdapter customAdapter = new CustomAdapter();
         gridView.setAdapter(customAdapter);
-
         setGridViewHeightBasedOnChildren(gridView, 2);
 
+        // this function pulls up a new view controller when clicked with the details of the
+        // specific tasks. this is set on all the grids in the grid view
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -156,6 +173,8 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        // This button lets the grid view become editable and changes the text from Edit to Done
+        // when completed editing
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -175,6 +194,8 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        // this button deletes the item on the grid if the conditions are met
+        // (Box checked && in edit mode)
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -189,6 +210,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        // This button launches the add task page when clicked and saves the data before launching
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,40 +220,46 @@ public class HomePage extends AppCompatActivity {
             }
         });
     }
+
+    // This calss contains the custom adapter for the grid view
     private class CustomAdapter extends BaseAdapter{
 
+        // returns the count of the grids in the gridview
         @Override
         public int getCount() {
             return gridList.size();
         }
 
+        // auto generated override
         @Override
         public Object getItem(int position) {
             return null;
         }
 
+        // auto generated override
         @Override
         public long getItemId(int position) {
             return 0;
         }
 
+        // This function creates the boxes for each section of the grid view and returns
+        // the an entire view
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view1 = getLayoutInflater().inflate(R.layout.row_data, null);
 
             TextView name = view1.findViewById(R.id.fruits);
             DonutProgress donutProgress = view1.findViewById(R.id.progress);
-//            ImageView image = view1.findViewById(R.id.images);
             if (gridList.size() != 0) {
                 Processor temp = new Processor(gridList.get(position));
                 name.setText(temp.getTitle());
                 donutProgress.setDonut_progress(temp.getPercentage());
             }
-//            image.setImageResource(fruitImages[position]);
             return view1;
         }
     }
 
+    // This function sets the grid view height by the amount of columns
     private void setGridViewHeightBasedOnChildren(GridView gridView, int noOfColumns) {
         ListAdapter gridViewAdapter = gridView.getAdapter();
         if (gridViewAdapter == null) {
@@ -275,28 +303,24 @@ public class HomePage extends AppCompatActivity {
         }
     }
 
+    // This function saves the data into the device using a custom class TinyDB
     private void saveData(){
         TinyDB tinydb = new TinyDB(this);
         tinydb.putListString(LIST, gridList);
         System.out.println(gridList);
     }
 
+    // THis function loads the data from the system using TinyDB
     private void loadData(){
         TinyDB tinydb = new TinyDB(this);
         gridList = tinydb.getListString(LIST);
         System.out.println(gridList);
     }
 
+    // This function refreshes the grid when something is modified on the grid
     public void refreshGrid(){
         CustomAdapter customAdapter = new CustomAdapter();
         gridView.setAdapter(customAdapter);
         setGridViewHeightBasedOnChildren(gridView, 2);
     }
-
-    public void createItem(String title, String type, String everyday, String time){
-        gridList.add(title + "," + "0," + type + "," + everyday + "," + time);
-        // Title | Percentage | Type | Everyday | Time
-    }
-
-
 }
