@@ -538,6 +538,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="o2W-os-4wg"/>
                     <connections>
+                        <outlet property="labelRegion" destination="iJQ-zC-h5k" id="icQ-Hg-tj0"/>
+                        <outlet property="labelUserName" destination="nho-qb-brb" id="RsL-xR-bCI"/>
                         <outlet property="profilePicture" destination="hFA-EO-VSp" id="n7i-kh-xQ1"/>
                     </connections>
                 </viewController>
@@ -616,8 +618,25 @@
                             </tableViewSection>
                             <tableViewSection footerTitle="" id="5bt-He-ack">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChangeProfilePictureCell" rowHeight="45" id="RKM-4s-oi7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChangeDateOfBirthCell" rowHeight="45" id="3bB-Xc-0fX">
                                         <rect key="frame" x="20" y="201" width="374" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3bB-Xc-0fX" id="4w1-bd-sfM">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMy-jV-dMb">
+                                                    <rect key="frame" x="20" y="13" width="109" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemBlueColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChangeProfilePictureCell" rowHeight="45" id="RKM-4s-oi7">
+                                        <rect key="frame" x="20" y="246" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKM-4s-oi7" id="g8l-o7-zc5">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -634,7 +653,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChangeRegionCell" rowHeight="45" id="RbT-Ek-9S4">
-                                        <rect key="frame" x="20" y="246" width="374" height="45"/>
+                                        <rect key="frame" x="20" y="291" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RbT-Ek-9S4" id="EMQ-Vm-L2o">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -651,7 +670,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChangeDateOfBirthCell" rowHeight="45" id="uAO-sC-xI0">
-                                        <rect key="frame" x="20" y="291" width="374" height="45"/>
+                                        <rect key="frame" x="20" y="336" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uAO-sC-xI0" id="sK3-0Q-ueU">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
