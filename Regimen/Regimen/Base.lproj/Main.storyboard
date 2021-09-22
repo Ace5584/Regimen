@@ -696,6 +696,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Personal Information" id="Wfk-vi-AvC"/>
                     <connections>
+                        <outlet property="labelDOB" destination="4yM-yO-gk2" id="UcD-vM-6oS"/>
+                        <outlet property="labelRegion" destination="nmO-ci-bPk" id="krx-Yt-9hc"/>
+                        <outlet property="labelUserName" destination="A8H-Hr-OGi" id="GsQ-uu-1lW"/>
                         <outlet property="profilePicture" destination="TOC-iP-S95" id="goC-eL-fKP"/>
                         <segue destination="Ia2-ib-znP" kind="popoverPresentation" identifier="DateSelectorSegue" popoverAnchorView="amQ-4r-A8y" id="XwU-pJ-tQN">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -704,7 +707,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JP7-zZ-hlB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489.8550724637685" y="1980.8035714285713"/>
+            <point key="canvasLocation" x="2486" y="1981"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="eqU-mi-y1L">

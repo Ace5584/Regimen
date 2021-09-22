@@ -9,8 +9,15 @@ import UIKit
 
 class StaticTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    let cells = [["Profile"], ["ChangeProfile", "ChangeRegion", "ChangeDOB"]]
-
+    let cells = [["Profile"], ["ChangeName", "ChangeProfile", "ChangeRegion", "ChangeDOB"]]
+    var userName = "#Name"
+    var userRegion = "#Region"
+    var userDOB = "#Date of Birth"
+    
+    @IBOutlet weak var labelUserName: UILabel!
+    @IBOutlet weak var labelRegion: UILabel!
+    @IBOutlet weak var labelDOB: UILabel!
+    
     @IBOutlet weak var profilePicture: UIImageView!
     
     override func viewDidLoad() {
@@ -20,15 +27,21 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
         profilePicture.layer.masksToBounds = true
         profilePicture.layer.borderWidth = 3
         profilePicture.layer.borderColor = UIColor.systemTeal.cgColor
-        if(isKeyPresentInUserDefaults(key: "ProfilePicture")){
-            let data = UserDefaults.standard.object(forKey: "ProfilePicture") as! NSData
-            profilePicture.image = UIImage(data: data as Data)
-        }
-        else{
-            let imageData = profilePicture.image!.pngData()! as NSData
-            defaults.set(imageData, forKey: "ProfilePicture")
-        }
+        checkData()
         
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       guard segue.identifier == "DateSelectorSegue" else { return }
+       let destination = segue.destination as! DatePickerViewController // change that to the real class
+       destination.callback = {
+           self.checkData()
+       }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkData()
     }
 
     // MARK: - Table view data source
@@ -46,17 +59,22 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath == [1, 0]{
+
+        }
+        else if indexPath == [1, 1]{
             let picker = UIImagePickerController()
             picker.allowsEditing = true
             picker.delegate = self
             picker.sourceType = UIImagePickerController.SourceType.photoLibrary
             present(picker, animated: true)
         }
-        else if indexPath == [1, 1]{
+        else if indexPath == [1, 2]{
             
         }
-        else if indexPath == [1, 2]{
+        else if indexPath == [1, 3]{
             self.performSegue(withIdentifier: "DateSelectorSegue", sender: self)
+            
+            checkData()
         }
     }
     
@@ -72,5 +90,44 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
     
     private func isKeyPresentInUserDefaults(key: String) -> Bool {
         return defaults.object(forKey: key) != nil
+    }
+    
+    private func checkData(){
+        if(isKeyPresentInUserDefaults(key: "ProfilePicture")){
+            let data = UserDefaults.standard.object(forKey: "ProfilePicture") as! NSData
+            profilePicture.image = UIImage(data: data as Data)
+        }
+        else{
+            let imageData = profilePicture.image!.pngData()! as NSData
+            defaults.set(imageData, forKey: "ProfilePicture")
+        }
+        
+        if(isKeyPresentInUserDefaults(key: "UserName")){
+            let data = UserDefaults.standard.object(forKey: "UserName") as! String
+            userName = data
+        }
+        else{
+            defaults.set(userName, forKey: "UserName")
+        }
+        
+        if(isKeyPresentInUserDefaults(key: "UserRegion")){
+            let data = UserDefaults.standard.object(forKey: "UserRegion") as! String
+            userRegion = data
+        }
+        else{
+            defaults.set(userRegion, forKey: "UserRegion")
+        }
+        
+        if(isKeyPresentInUserDefaults(key: "UserDOB")){
+            let data = UserDefaults.standard.object(forKey: "UserDOB") as! String
+            userDOB = data
+        }
+        else{
+            defaults.set(userDOB, forKey: "UserDOB")
+        }
+        
+        labelUserName.text = userName
+        labelRegion.text = userRegion
+        labelDOB.text = userDOB
     }
 }

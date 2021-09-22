@@ -11,6 +11,7 @@ class DatePickerViewController: UIViewController {
 
     @IBOutlet weak var dateTextField : UITextField!
     let datePicker = UIDatePicker()
+    var callback : (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,11 @@ class DatePickerViewController: UIViewController {
         datePicker.datePickerMode = .date
     }
     
+    override func viewDidDisappear(_ animated : Bool) {
+        super.viewDidDisappear(animated)
+        callback?()
+    }
+    
     @objc func donePressed(){
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -43,5 +49,7 @@ class DatePickerViewController: UIViewController {
         
         dateTextField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
+        defaults.set(formatter.string(from: datePicker.date), forKey: "UserDOB")
+        dismiss(animated: true, completion: nil)
     }
 }

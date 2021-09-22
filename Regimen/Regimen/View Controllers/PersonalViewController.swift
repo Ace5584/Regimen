@@ -51,7 +51,7 @@ class PersonalViewController: UIViewController, UIImagePickerControllerDelegate,
             userName = data
         }
         else{
-            defaults.set("UserName", forKey: userName)
+            defaults.set(userName, forKey: "UserName")
         }
         
         if(isKeyPresentInUserDefaults(key: "UserRegion")){
@@ -59,7 +59,7 @@ class PersonalViewController: UIViewController, UIImagePickerControllerDelegate,
             userRegion = data
         }
         else{
-            defaults.set("UserRegion", forKey: userRegion)
+            defaults.set(userRegion, forKey: "UserRegion")
         }
         
         if(isKeyPresentInUserDefaults(key: "UserDOB")){
@@ -67,7 +67,7 @@ class PersonalViewController: UIViewController, UIImagePickerControllerDelegate,
             userDOB = data
         }
         else{
-            defaults.set("UserDOB", forKey: userDOB)
+            defaults.set(userDOB, forKey: "UserDOB")
         }
         
         labelUserName.text = userName
