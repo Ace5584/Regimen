@@ -10,26 +10,38 @@ import UIKit
 class DatePickerViewController: UIViewController {
 
     @IBOutlet weak var dateTextField : UITextField!
+    let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createDatePicker()
+    }
+    
+    func createDatePicker() {
+        dateTextField.textAlignment = .center
         
-        let datePicker = UIDatePicker()
-        datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let btnDone = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([btnDone], animated: true)
+        
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = datePicker
         datePicker.frame.size = CGSize(width: 0, height: 300)
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .date
         dateTextField.inputView = datePicker
-        dateTextField.text = formatDate(date: Date())
+        
+        datePicker.datePickerMode = .date
     }
     
-    @objc func dateChange(datePicker: UIDatePicker){
-        dateTextField.text = formatDate(date: datePicker.date)
-    }
-    
-    func formatDate(date: Date) -> String{
+    @objc func donePressed(){
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM dd yyyy"
-        return formatter.string(from: date)
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        dateTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
     }
 }
