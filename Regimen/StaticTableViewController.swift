@@ -33,11 +33,21 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard segue.identifier == "DateSelectorSegue" else { return }
-       let destination = segue.destination as! DatePickerViewController // change that to the real class
-       destination.callback = {
-           self.checkData()
-       }
+        if segue.identifier == "DateSelectorSegue"{
+            let destination = segue.destination as! DatePickerViewController // change that to the real class
+            destination.callback = {
+                self.checkData()
+            }
+        }
+        else if segue.identifier == "ChangeNameSegue"{
+            let destination2 = segue.destination as! ChangeNameViewController // change that to the real class
+            destination2.callback = {
+                self.checkData()
+            }
+        }
+        else{
+            return
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +69,7 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath == [1, 0]{
+            self.performSegue(withIdentifier: "ChangeNameSegue", sender: self)
 
         }
         else if indexPath == [1, 1]{
@@ -73,8 +84,6 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
         }
         else if indexPath == [1, 3]{
             self.performSegue(withIdentifier: "DateSelectorSegue", sender: self)
-            
-            checkData()
         }
     }
     

@@ -13,6 +13,7 @@
 		4877D52B26DD908200EACD17 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4877D52A26DD908200EACD17 /* DatePickerViewController.swift */; };
 		48850D0626D31C9F0075A8D3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48850D0526D31C9F0075A8D3 /* SettingsViewController.swift */; };
 		48850D0826D31CEE0075A8D3 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48850D0726D31CEE0075A8D3 /* SettingTableViewCell.swift */; };
+		488FACD826FC27BA00686682 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FACD726FC27BA00686682 /* ChangeNameViewController.swift */; };
 		4890A9B026C9DCFB006A1E6C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890A9AF26C9DCFB006A1E6C /* DetailViewController.swift */; };
 		48A3F15526A8F0F400DD717D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15426A8F0F400DD717D /* AppDelegate.swift */; };
 		48A3F15726A8F0F400DD717D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3F15626A8F0F400DD717D /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		4877D52A26DD908200EACD17 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		48850D0526D31C9F0075A8D3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		48850D0726D31CEE0075A8D3 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		488FACD726FC27BA00686682 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 		4890A9AF26C9DCFB006A1E6C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		48A3F15126A8F0F400DD717D /* Regimen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Regimen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A3F15426A8F0F400DD717D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				4890A9AF26C9DCFB006A1E6C /* DetailViewController.swift */,
 				48759E6626D6FC6D00E2E2C3 /* PersonalViewController.swift */,
 				4877D52A26DD908200EACD17 /* DatePickerViewController.swift */,
+				488FACD726FC27BA00686682 /* ChangeNameViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				4890A9B026C9DCFB006A1E6C /* DetailViewController.swift in Sources */,
 				48850D0626D31C9F0075A8D3 /* SettingsViewController.swift in Sources */,
 				48759E6726D6FC6D00E2E2C3 /* PersonalViewController.swift in Sources */,
+				488FACD826FC27BA00686682 /* ChangeNameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
