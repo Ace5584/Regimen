@@ -40,8 +40,14 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
             }
         }
         else if segue.identifier == "ChangeNameSegue"{
-            let destination2 = segue.destination as! ChangeNameViewController // change that to the real class
-            destination2.callback = {
+            let destination = segue.destination as! ChangeNameViewController // change that to the real class
+            destination.callback = {
+                self.checkData()
+            }
+        }
+        else if segue.identifier == "ChangeRegionSegue"{
+            let destination = segue.destination as! ChangeRegionViewController // change that to the real class
+            destination.callback = {
                 self.checkData()
             }
         }
@@ -80,7 +86,7 @@ class StaticTableViewController: UITableViewController, UIImagePickerControllerD
             present(picker, animated: true)
         }
         else if indexPath == [1, 2]{
-            
+            self.performSegue(withIdentifier: "ChangeRegionSegue", sender: self)
         }
         else if indexPath == [1, 3]{
             self.performSegue(withIdentifier: "DateSelectorSegue", sender: self)
