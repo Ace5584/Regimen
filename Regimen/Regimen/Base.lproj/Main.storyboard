@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="if1-qx-Eh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1343" y="1967"/>
+            <point key="canvasLocation" x="-1358" y="2032"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="YAU-qK-Tfd">
@@ -305,44 +305,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IW-qC-f7L">
-                                <rect key="frame" x="102" y="245" width="210" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6GY-Ei-BsT">
-                                <rect key="frame" x="159" y="356" width="96" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="ekv-gC-xIe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-Zd-eYo">
-                                <rect key="frame" x="176.5" y="480" width="61" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="61" id="T4H-4o-kgs"/>
-                                    <constraint firstAttribute="height" constant="35" id="gqz-EM-ZTJ"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-Zd-eYo">
+                                <rect key="frame" x="177" y="583" width="61" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Save"/>
                                 <connections>
                                     <action selector="didTapSave" destination="kx3-aA-KXQ" eventType="touchUpInside" id="4tg-CB-lAD"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6GY-Ei-BsT">
+                                <rect key="frame" x="142" y="363" width="130" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="krZ-o1-hLK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="8IW-qC-f7L" firstAttribute="centerX" secondItem="iDm-oI-ved" secondAttribute="centerX" id="2II-o1-HnS"/>
-                            <constraint firstItem="6GY-Ei-BsT" firstAttribute="centerX" secondItem="gBe-Zd-eYo" secondAttribute="centerX" id="3vi-jP-hiX"/>
-                            <constraint firstItem="8IW-qC-f7L" firstAttribute="top" secondItem="krZ-o1-hLK" secondAttribute="top" constant="201" id="IYA-HQ-z7N"/>
-                            <constraint firstItem="8IW-qC-f7L" firstAttribute="centerX" secondItem="6GY-Ei-BsT" secondAttribute="centerX" id="Qtn-oa-pCd"/>
-                            <constraint firstItem="6GY-Ei-BsT" firstAttribute="leading" secondItem="krZ-o1-hLK" secondAttribute="leading" constant="159" id="kOb-1f-gO2"/>
-                            <constraint firstItem="gBe-Zd-eYo" firstAttribute="top" secondItem="6GY-Ei-BsT" secondAttribute="bottom" constant="90" id="t7a-Ha-6cn"/>
-                            <constraint firstItem="6GY-Ei-BsT" firstAttribute="top" secondItem="8IW-qC-f7L" secondAttribute="bottom" constant="51" id="tzT-55-Xo7"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dqT-rF-9v4"/>
                     <connections>
@@ -352,9 +332,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0B-Rv-pNJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-558" y="1968"/>
+            <point key="canvasLocation" x="-559.4202898550725" y="2031.6964285714284"/>
         </scene>
-        <!--View Controller-->
+        <!--History-->
         <scene sceneID="hGl-1S-e62">
             <objects>
                 <viewController id="7hr-KT-GKR" sceneMemberID="viewController">
@@ -389,29 +369,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kor-80-tIn">
-                                <rect key="frame" x="160.5" y="54" width="93" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aNE-4P-qCF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Kor-80-tIn" firstAttribute="centerY" secondItem="4Mb-QS-kjE" secondAttribute="centerY" constant="-376" id="Bdp-ci-FiX"/>
-                            <constraint firstItem="Kor-80-tIn" firstAttribute="centerX" secondItem="4Mb-QS-kjE" secondAttribute="centerX" id="Rld-g9-eAD"/>
                             <constraint firstItem="VMc-5H-U6P" firstAttribute="centerX" secondItem="4Mb-QS-kjE" secondAttribute="centerX" id="Z67-2o-guI"/>
                             <constraint firstItem="VMc-5H-U6P" firstAttribute="centerY" secondItem="4Mb-QS-kjE" secondAttribute="centerY" constant="38" id="dBq-XK-jpS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HmC-NB-OTY"/>
+                    <navigationItem key="navigationItem" title="History" id="HmC-NB-OTY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HxT-8D-o0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="198.55072463768118" y="1305.8035714285713"/>
         </scene>
-        <!--View Controller-->
+        <!--Calendar-->
         <scene sceneID="xL6-Zq-9KG">
             <objects>
                 <viewController id="onG-I8-chv" sceneMemberID="viewController">
@@ -453,13 +425,13 @@
                             <constraint firstItem="sfI-zJ-Npv" firstAttribute="centerX" secondItem="zCK-pB-kGP" secondAttribute="centerX" id="zQc-My-1vC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ipe-Gl-7eQ"/>
+                    <navigationItem key="navigationItem" title="Calendar" id="ipe-Gl-7eQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMe-ls-cPU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="1305.8035714285713"/>
         </scene>
-        <!--Personal View Controller-->
+        <!--Personal-->
         <scene sceneID="FMP-RN-xuA">
             <objects>
                 <viewController id="jcc-F9-xZI" customClass="PersonalViewController" customModule="Regimen" customModuleProvider="target" sceneMemberID="viewController">
@@ -536,7 +508,7 @@
                             <constraint firstItem="nho-qb-brb" firstAttribute="centerX" secondItem="Fro-t1-78V" secondAttribute="centerX" id="xjX-aJ-hU6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="o2W-os-4wg"/>
+                    <navigationItem key="navigationItem" title="Personal" id="o2W-os-4wg"/>
                     <connections>
                         <outlet property="labelRegion" destination="iJQ-zC-h5k" id="icQ-Hg-tj0"/>
                         <outlet property="labelUserName" destination="nho-qb-brb" id="RsL-xR-bCI"/>

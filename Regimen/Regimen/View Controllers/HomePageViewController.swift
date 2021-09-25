@@ -37,7 +37,7 @@ class HomePageViewController: UIViewController{
         // Checking if Labels key exist, if it does, update labels with the existing key
         // If it does not exist, create key that stores the label
         if(isKeyPresentInUserDefaults(key: "Labels")){
-            labels = (defaults.object(forKey: "Labels") as? Array<String>)!
+            labels = (defaults.object(forKey: "Labels") as? Array<Array<String>>)!
         }
         else{
             defaults.set(labels, forKey: "Labels")
@@ -96,7 +96,7 @@ class HomePageViewController: UIViewController{
         var item: String!
         let text = notification.object as! String?
         item = text
-        labels.append(item)
+        labels.append([item])
         let indexPath = IndexPath(row: labels.count-1, section: 0)
         collectionView.insertItems(at: [indexPath])
         changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)

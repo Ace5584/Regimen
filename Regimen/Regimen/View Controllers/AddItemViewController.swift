@@ -9,6 +9,8 @@ import UIKit
 
 class AddItemViewController: UIViewController, UITextFieldDelegate{
     
+    // Name of the Task | Time Based or Task based | Time | Completed or not | Days Allocated
+    
     public var completionHandler: ((String?)->Void)?
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var btnSave: UIButton!

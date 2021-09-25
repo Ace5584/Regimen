@@ -8,7 +8,7 @@
 import UIKit
 
 public let defaults = UserDefaults.standard
-public var labels = [String]()
+public var labels = [[String]]()
 public var labelLength = labels.count
 public var measure = Double(screenWidth) / 2
 
@@ -21,7 +21,7 @@ class CollectionView: UICollectionView, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! CollectionViewCell
         cell.setProgressView()
-        cell.setLabel(label: labels[indexPath.row])
+        cell.setLabel(label: labels[indexPath.row][0])
         return cell
     }
     
