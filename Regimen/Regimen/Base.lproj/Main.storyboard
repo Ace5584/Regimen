@@ -315,11 +315,22 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6GY-Ei-BsT">
-                                <rect key="frame" x="142" y="363" width="130" height="34"/>
+                                <rect key="frame" x="142" y="414" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3ZF-RA-Ja2">
+                                <rect key="frame" x="64" y="219" width="287" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Time Based"/>
+                                    <segment title="Task Based"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeSegment:" destination="kx3-aA-KXQ" eventType="valueChanged" id="hYI-9t-hzZ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="krZ-o1-hLK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

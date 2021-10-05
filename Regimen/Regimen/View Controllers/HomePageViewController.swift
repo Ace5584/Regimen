@@ -93,10 +93,10 @@ class HomePageViewController: UIViewController{
     // Creates a new cell with text recieved
     // Changes the height of the constraint on Collection view
     @objc func didGetNotification(_ notification: Notification){
-        var item: String!
-        let text = notification.object as! String?
+        var item: [String]!
+        let text = notification.object as! [String]?
         item = text
-        labels.append([item])
+        labels.append(item)
         let indexPath = IndexPath(row: labels.count-1, section: 0)
         collectionView.insertItems(at: [indexPath])
         changeConstraint(Constraint: collectionHeight1, LabelLength: labels.count, ScreenWidth: screenWidth)
