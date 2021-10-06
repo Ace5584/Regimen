@@ -16,6 +16,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var timeSelectionView: UIView!
     let datePicker = UIDatePicker()
     
     @IBAction func didTapSave(){
@@ -33,10 +34,12 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
     @IBAction func didChangeSegment(_ sender: UISegmentedControl){
         if sender.selectedSegmentIndex == 0{
             isTimeBased = true
+            timeSelectionView.isHidden = false
             print(isTimeBased)
         }
         if sender.selectedSegmentIndex == 1{
             isTimeBased = false
+            timeSelectionView.isHidden = true
             print(isTimeBased)
         }
         

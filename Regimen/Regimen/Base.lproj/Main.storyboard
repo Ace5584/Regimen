@@ -411,6 +411,7 @@
                         <outlet property="btnSave" destination="gBe-Zd-eYo" id="TqI-v8-4Ay"/>
                         <outlet property="dateTextField" destination="mIr-eC-QBx" id="DHv-iy-4CX"/>
                         <outlet property="textField" destination="6GY-Ei-BsT" id="z2S-re-byd"/>
+                        <outlet property="timeSelectionView" destination="t5l-f2-b3J" id="xet-Df-fBb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0B-Rv-pNJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
