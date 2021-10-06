@@ -35,12 +35,10 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
         if sender.selectedSegmentIndex == 0{
             isTimeBased = true
             timeSelectionView.isHidden = false
-            print(isTimeBased)
         }
         if sender.selectedSegmentIndex == 1{
             isTimeBased = false
             timeSelectionView.isHidden = true
-            print(isTimeBased)
         }
         
     }

@@ -44,7 +44,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 70, bottom: 0, right: 0)
         models.append(Section(title: "General", options: [
             SettingssOption(title: "Background", icon: UIImage(systemName: "person.crop.artframe"), iconBackgroundColor: .systemCyan){
-            print("Selected first cell")
         },
             SettingssOption(title: "Color Scheme", icon: UIImage(systemName: "paintpalette.fill"), iconBackgroundColor: .systemRed){
             
