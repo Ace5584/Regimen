@@ -305,32 +305,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-Zd-eYo">
-                                <rect key="frame" x="177" y="583" width="61" height="35"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="802-mz-Wt3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Save"/>
-                                <connections>
-                                    <action selector="didTapSave" destination="kx3-aA-KXQ" eventType="touchUpInside" id="4tg-CB-lAD"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6GY-Ei-BsT">
-                                <rect key="frame" x="142" y="414" width="130" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3ZF-RA-Ja2">
-                                <rect key="frame" x="64" y="219" width="287" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Time Based"/>
-                                    <segment title="Task Based"/>
-                                </segments>
-                                <connections>
-                                    <action selector="didChangeSegment:" destination="kx3-aA-KXQ" eventType="valueChanged" id="hYI-9t-hzZ"/>
-                                </connections>
-                            </segmentedControl>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dip-Gz-yC7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="578"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3h-Rr-oWc">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3ZF-RA-Ja2">
+                                                        <rect key="frame" x="64" y="72" width="287" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <segments>
+                                                            <segment title="Time Based"/>
+                                                            <segment title="Task Based"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="didChangeSegment:" destination="kx3-aA-KXQ" eventType="valueChanged" id="hYI-9t-hzZ"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6GY-Ei-BsT">
+                                                        <rect key="frame" x="142" y="133" width="130" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="IZu-QK-9BF"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5l-f2-b3J">
+                                                <rect key="frame" x="0.0" y="200" width="414" height="128"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mIr-eC-QBx">
+                                                        <rect key="frame" x="159" y="62" width="97" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vox-9f-QeM">
+                                                        <rect key="frame" x="180" y="24" width="54" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="hWB-Ip-q4r"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-Qu-Dq4">
+                                                <rect key="frame" x="0.0" y="328" width="414" height="250"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-Zd-eYo">
+                                                        <rect key="frame" x="176" y="107" width="61" height="35"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="Save"/>
+                                                        <connections>
+                                                            <action selector="didTapSave" destination="kx3-aA-KXQ" eventType="touchUpInside" id="4tg-CB-lAD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="dPN-iF-uAk"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="t5l-f2-b3J" secondAttribute="trailing" id="5Vb-Mn-LlO"/>
+                                            <constraint firstAttribute="trailing" secondItem="TPV-Qu-Dq4" secondAttribute="trailing" id="5Zx-gX-nj7"/>
+                                            <constraint firstItem="TPV-Qu-Dq4" firstAttribute="top" secondItem="t5l-f2-b3J" secondAttribute="bottom" id="CEy-ij-neV"/>
+                                            <constraint firstItem="TPV-Qu-Dq4" firstAttribute="top" secondItem="t5l-f2-b3J" secondAttribute="bottom" id="R7A-Sm-9uJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="TPV-Qu-Dq4" secondAttribute="bottom" id="XPb-8c-t7c"/>
+                                            <constraint firstAttribute="bottom" secondItem="TPV-Qu-Dq4" secondAttribute="bottom" id="g7w-IH-xxk"/>
+                                            <constraint firstItem="TPV-Qu-Dq4" firstAttribute="leading" secondItem="dip-Gz-yC7" secondAttribute="leading" id="mMR-Vs-f2H"/>
+                                            <constraint firstItem="t5l-f2-b3J" firstAttribute="leading" secondItem="dip-Gz-yC7" secondAttribute="leading" id="ouL-KT-2YD"/>
+                                            <constraint firstItem="TPV-Qu-Dq4" firstAttribute="top" secondItem="t5l-f2-b3J" secondAttribute="bottom" id="sWk-Bs-RuF"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dip-Gz-yC7" firstAttribute="width" secondItem="rnl-hx-OZ1" secondAttribute="width" id="3ez-6w-ocm"/>
+                                    <constraint firstItem="dip-Gz-yC7" firstAttribute="leading" secondItem="9Tm-do-b0A" secondAttribute="leading" id="6Jj-eb-Bdy"/>
+                                    <constraint firstItem="dip-Gz-yC7" firstAttribute="bottom" secondItem="9Tm-do-b0A" secondAttribute="bottom" id="8eH-kG-eNy"/>
+                                    <constraint firstItem="dip-Gz-yC7" firstAttribute="trailing" secondItem="9Tm-do-b0A" secondAttribute="trailing" id="AOH-v9-vD0"/>
+                                    <constraint firstItem="dip-Gz-yC7" firstAttribute="top" secondItem="9Tm-do-b0A" secondAttribute="top" id="kPz-h5-bG5"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="9Tm-do-b0A"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="rnl-hx-OZ1"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="krZ-o1-hLK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -338,6 +409,7 @@
                     <navigationItem key="navigationItem" id="dqT-rF-9v4"/>
                     <connections>
                         <outlet property="btnSave" destination="gBe-Zd-eYo" id="TqI-v8-4Ay"/>
+                        <outlet property="dateTextField" destination="mIr-eC-QBx" id="DHv-iy-4CX"/>
                         <outlet property="textField" destination="6GY-Ei-BsT" id="z2S-re-byd"/>
                     </connections>
                 </viewController>

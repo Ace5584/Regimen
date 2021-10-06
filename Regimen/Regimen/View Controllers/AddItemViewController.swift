@@ -15,6 +15,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
     public var isTimeBased = true
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var dateTextField: UITextField!
+    let datePicker = UIDatePicker()
     
     @IBAction func didTapSave(){
         var taskType = "Time Based"
@@ -49,12 +51,40 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
         self.view.endEditing(true)
     }
     
+    func createDatePicker() {
+        dateTextField.textAlignment = .center
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let btnDone = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([btnDone], animated: true)
+        
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = datePicker
+        datePicker.frame.size = CGSize(width: 0, height: 300)
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .countDownTimer
+        dateTextField.inputView = datePicker
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textField.delegate = self
+        createDatePicker()
         // Do any additional setup after loading the view.
     }
     
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "hh:mm"
+        
+        dateTextField.text = formatter.string(from: datePicker.date)
+        
+        self.view.endEditing(true)
+    }
     
 }
