@@ -9,7 +9,7 @@ import UIKit
 
 class AddItemViewController: UIViewController, UITextFieldDelegate{
     
-    // Name of the Task | Time Based or Task based | Time | Completed or not | Days Allocated
+    // Name of the Task | Time Based or Task based | Time | Completed or not | Days Allocated ? (Will not be added in the current version)
     
     public var completionHandler: ((String?)->Void)?
     public var isTimeBased = true
@@ -20,15 +20,21 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
     let datePicker = UIDatePicker()
     
     @IBAction func didTapSave(){
-        var taskType = "Time Based"
-        if isTimeBased{
-            taskType = "Time Based"
+        if textField.text != "" && dateTextField.text != ""{
+            var taskType = "Time Based"
+            var time = "0"
+            let completion = "false"
+            if isTimeBased{
+                taskType = "Time Based"
+                time = dateTextField.text ?? "0"
+            }
+            else{
+                taskType = "Task Based"
+            }
+            NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType, time, completion])
+            dismiss(animated: true, completion: nil)
         }
-        else{
-            taskType = "Task Based"
-        }
-        NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType])
-        dismiss(animated: true, completion: nil)
+
     }
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl){
