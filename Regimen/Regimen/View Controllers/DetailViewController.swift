@@ -8,10 +8,12 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var selectedData: [String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(selectedData!)
         // Do any additional setup after loading the view.
     }
     

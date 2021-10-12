@@ -75,6 +75,18 @@ class HomePageViewController: UIViewController{
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedItem = sender as? [String] else{
+            return
+        }
+        if segue.identifier == "DetailsSegue"{
+            guard let destinationVC = segue.destination as? DetailViewController else{
+                return
+            }
+            destinationVC.selectedData = selectedItem
+        }
+    }
+    
     // overrides default set editing function
     // Enables editing when navigation button edit is selected
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -104,7 +116,9 @@ class HomePageViewController: UIViewController{
     
     @objc func enableDetailScene(_ notification: Notification){
         if(isEditing == false){
-            self.performSegue(withIdentifier: "DetailsSegue", sender: self)
+            let _index = notification.object as? Int ?? 0
+            let selectedData = labels[_index]
+            self.performSegue(withIdentifier: "DetailsSegue", sender: selectedData)
             
         }
     }

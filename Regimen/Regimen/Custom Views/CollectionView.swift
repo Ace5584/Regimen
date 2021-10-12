@@ -48,6 +48,6 @@ class CollectionView: UICollectionView, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NotificationCenter.default.post(name: Notification.Name("Detail"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("Detail"), object: indexPath.item)
     }
 }
