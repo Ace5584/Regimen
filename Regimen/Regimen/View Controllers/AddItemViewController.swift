@@ -20,19 +20,27 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
     let datePicker = UIDatePicker()
     
     @IBAction func didTapSave(){
-        if textField.text != "" && dateTextField.text != ""{
-            var taskType = "Time Based"
-            var time = "0"
-            let completion = "false"
-            if isTimeBased{
-                taskType = "Time Based"
-                time = dateTextField.text ?? "0"
+        var taskType = "Time Based"
+        var time = "0"
+        let completion = "false"
+        if isTimeBased{
+            taskType = "Time Based"
+            time = dateTextField.text ?? "0"
+        }
+        else{
+            taskType = "Task Based"
+        }
+        if isTimeBased{
+            if textField.text != "" && dateTextField.text != ""{
+                NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType, time, completion])
+                dismiss(animated: true, completion: nil)
             }
-            else{
-                taskType = "Task Based"
+        }
+        else{
+            if textField.text != ""{
+                NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType, time, completion])
+                dismiss(animated: true, completion: nil)
             }
-            NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType, time, completion])
-            dismiss(animated: true, completion: nil)
         }
 
     }

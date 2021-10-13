@@ -277,25 +277,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF3-z1-agh">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF3-z1-agh">
+                                <rect key="frame" x="147.5" y="157" width="119" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2U-AO-RZz" customClass="CircularProgressBar" customModule="Regimen" customModuleProvider="target">
+                                <rect key="frame" x="107" y="450" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="rF2-aK-Qp2"/>
+                                    <constraint firstAttribute="width" constant="200" id="xDn-I8-gdF"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaskType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb6-BL-IuR">
+                                <rect key="frame" x="171" y="195" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlR-14-fOA">
+                                <rect key="frame" x="153" y="731" width="108" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Completed"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c9Q-QN-18K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HF3-z1-agh" firstAttribute="centerX" secondItem="RwY-4v-8nD" secondAttribute="centerX" id="6Sn-uy-Wsf"/>
-                            <constraint firstItem="HF3-z1-agh" firstAttribute="centerY" secondItem="RwY-4v-8nD" secondAttribute="centerY" id="zq1-1O-E2L"/>
+                            <constraint firstItem="HF3-z1-agh" firstAttribute="centerX" secondItem="RwY-4v-8nD" secondAttribute="centerX" id="bnJ-ca-rUT"/>
+                            <constraint firstItem="kb6-BL-IuR" firstAttribute="centerY" secondItem="RwY-4v-8nD" secondAttribute="centerY" constant="-242.5" id="exC-tM-TOx"/>
+                            <constraint firstItem="c9Q-QN-18K" firstAttribute="trailing" secondItem="i2U-AO-RZz" secondAttribute="trailing" constant="107" id="i5H-xk-jmh"/>
+                            <constraint firstItem="c9Q-QN-18K" firstAttribute="bottom" secondItem="i2U-AO-RZz" secondAttribute="bottom" constant="163" id="imN-7Y-jDT"/>
+                            <constraint firstItem="kb6-BL-IuR" firstAttribute="centerX" secondItem="RwY-4v-8nD" secondAttribute="centerX" id="l4F-I6-chN"/>
+                            <constraint firstItem="i2U-AO-RZz" firstAttribute="leading" secondItem="c9Q-QN-18K" secondAttribute="leading" constant="107" id="o2A-DU-XpI"/>
+                            <constraint firstItem="HF3-z1-agh" firstAttribute="centerY" secondItem="RwY-4v-8nD" secondAttribute="centerY" constant="-276" id="si2-4i-6zL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wKY-sD-pS3"/>
+                    <connections>
+                        <outlet property="progressCircle" destination="i2U-AO-RZz" id="5We-i7-Yi1"/>
+                        <outlet property="taskName" destination="HF3-z1-agh" id="lQh-gf-Shq"/>
+                        <outlet property="taskType" destination="kb6-BL-IuR" id="slT-Re-1xn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="if1-qx-Eh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1358" y="2032"/>
+            <point key="canvasLocation" x="-1359.4202898550725" y="2031.6964285714284"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="YAU-qK-Tfd">
