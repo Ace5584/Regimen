@@ -302,6 +302,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Completed"/>
+                                <connections>
+                                    <action selector="completeBtn:" destination="Bwc-sw-RId" eventType="touchDown" id="awv-Wb-U5b"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c9Q-QN-18K"/>

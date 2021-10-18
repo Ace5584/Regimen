@@ -28,6 +28,21 @@ class DetailViewController: UIViewController {
         }
     }
     
+    @IBAction func completeBtn(_ sender: UIButton){
+        if selectedData?[3] != "true"{
+            var adjusted = selectedData
+            adjusted?[3] = "true"
+            for item in labels{
+                if item == selectedData{
+                    labels[labels.firstIndex(of: item) ?? 0] = adjusted ?? [""]
+                }
+            }
+            print(labels)
+            progressCircle.setProgressWithAnimation(duration: 5, value: 1)
+            defaults.set(labels, forKey: "Labels")
+        }
+    }
+    
     private func isKeyPresentInUserDefaults(key: String) -> Bool {
         return defaults.object(forKey: key) != nil
     }
