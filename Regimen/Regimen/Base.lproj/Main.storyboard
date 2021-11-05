@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yhp-aW-WoW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yhp-aW-WoW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="-557" y="608"/>
         </scene>
-        <!--Home Page-->
+        <!--Regimen-->
         <scene sceneID="f6b-1u-t1b">
             <objects>
                 <viewController id="Rhe-gb-Evh" customClass="HomePageViewController" customModule="Regimen" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,7 +247,7 @@
                             <constraint firstItem="TAf-PV-rvI" firstAttribute="leading" secondItem="wYt-q8-7Vs" secondAttribute="leading" id="mQi-42-PJ8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home Page" id="LCA-bz-XeQ">
+                    <navigationItem key="navigationItem" title="Regimen" id="LCA-bz-XeQ">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="trash" id="kK9-cl-9Gc">
                             <connections>
                                 <action selector="deleteBtn:" destination="Rhe-gb-Evh" id="S2a-9J-ima"/>
@@ -468,7 +468,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="y2Q-B1-Zyn">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y2Q-B1-Zyn" id="4Ts-b0-Iy5">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -819,7 +819,7 @@
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu6-ZT-WDg">
-                                <rect key="frame" x="174.5" y="553" width="65" height="35"/>
+                                <rect key="frame" x="178" y="553" width="58.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Done"/>
                                 <connections>

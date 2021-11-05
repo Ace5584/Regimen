@@ -21,10 +21,10 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var checkMarkLabel: UILabel!
     
     // Description
-    func setProgressView(){
+    func setProgressView(progress: Float){
         circleProgressView.trackClr = UIColor.systemTeal
         circleProgressView.progressClr = UIColor.systemBlue
-        circleProgressView.setProgressWithAnimation(duration: 5, value: 0.5)
+        circleProgressView.setProgressWithAnimation(duration: 5, value: progress)
     }
     
     // Description

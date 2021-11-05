@@ -95,7 +95,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
         let formatter = DateFormatter()
         formatter.dateStyle = .none
         formatter.timeStyle = .medium
-        formatter.dateFormat = "hh:mm"
+        formatter.dateFormat = "HH:MM"
         
         dateTextField.text = formatter.string(from: datePicker.date)
         

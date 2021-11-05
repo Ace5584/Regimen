@@ -20,7 +20,13 @@ class CollectionView: UICollectionView, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! CollectionViewCell
-        cell.setProgressView()
+        print(labels[indexPath.row][3])
+        if labels[indexPath.row][3] == "false"{
+            cell.setProgressView(progress: Float(0.01))
+        }
+        else{
+            cell.setProgressView(progress: Float(1))
+        }
         cell.setLabel(label: labels[indexPath.row][0])
         return cell
     }
