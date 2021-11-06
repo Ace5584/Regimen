@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var details: UILabel!
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskType: UILabel!
     @IBOutlet weak var progressCircle: CircularProgressBar!
@@ -16,7 +17,6 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedData)
         taskName.text = selectedData?[0]
         taskType.text = selectedData?[1]
         progressCircle.trackClr = UIColor.systemTeal
@@ -26,6 +26,12 @@ class DetailViewController: UIViewController {
         }
         else {
             progressCircle.setProgressWithAnimation(duration: 5, value: 1)
+        }
+        if selectedData?[4] != ""{
+            details.text = selectedData?[4]
+        }
+        else{
+            details.text = "N/A"
         }
     }
     

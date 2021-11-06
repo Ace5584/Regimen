@@ -297,22 +297,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlR-14-fOA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlR-14-fOA">
                                 <rect key="frame" x="153" y="731" width="108" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Completed"/>
                                 <connections>
                                     <action selector="completeBtn:" destination="Bwc-sw-RId" eventType="touchDown" id="awv-Wb-U5b"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdx-7d-tbM">
+                                <rect key="frame" x="40" y="236" width="334" height="174"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c9Q-QN-18K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kdx-7d-tbM" firstAttribute="leading" secondItem="c9Q-QN-18K" secondAttribute="leading" constant="40" id="75h-gu-kby"/>
+                            <constraint firstItem="i2U-AO-RZz" firstAttribute="top" secondItem="kdx-7d-tbM" secondAttribute="bottom" constant="40" id="BAp-0I-u2G"/>
+                            <constraint firstItem="RlR-14-fOA" firstAttribute="leading" secondItem="c9Q-QN-18K" secondAttribute="leading" constant="153" id="Hkr-Xd-vEA"/>
+                            <constraint firstItem="RlR-14-fOA" firstAttribute="centerX" secondItem="i2U-AO-RZz" secondAttribute="centerX" id="HoH-05-dXq"/>
+                            <constraint firstItem="c9Q-QN-18K" firstAttribute="trailing" secondItem="kdx-7d-tbM" secondAttribute="trailing" constant="40" id="LJa-4o-Fqe"/>
+                            <constraint firstItem="kdx-7d-tbM" firstAttribute="top" secondItem="kb6-BL-IuR" secondAttribute="bottom" constant="20" id="UqD-5T-VpJ"/>
                             <constraint firstItem="HF3-z1-agh" firstAttribute="centerX" secondItem="RwY-4v-8nD" secondAttribute="centerX" id="bnJ-ca-rUT"/>
                             <constraint firstItem="kb6-BL-IuR" firstAttribute="centerY" secondItem="RwY-4v-8nD" secondAttribute="centerY" constant="-242.5" id="exC-tM-TOx"/>
+                            <constraint firstItem="RlR-14-fOA" firstAttribute="top" secondItem="i2U-AO-RZz" secondAttribute="bottom" constant="81" id="hJd-sS-4H3"/>
                             <constraint firstItem="c9Q-QN-18K" firstAttribute="trailing" secondItem="i2U-AO-RZz" secondAttribute="trailing" constant="107" id="i5H-xk-jmh"/>
+                            <constraint firstItem="c9Q-QN-18K" firstAttribute="bottom" secondItem="RlR-14-fOA" secondAttribute="bottom" constant="47" id="ikY-QU-MUL"/>
                             <constraint firstItem="c9Q-QN-18K" firstAttribute="bottom" secondItem="i2U-AO-RZz" secondAttribute="bottom" constant="163" id="imN-7Y-jDT"/>
                             <constraint firstItem="kb6-BL-IuR" firstAttribute="centerX" secondItem="RwY-4v-8nD" secondAttribute="centerX" id="l4F-I6-chN"/>
                             <constraint firstItem="i2U-AO-RZz" firstAttribute="leading" secondItem="c9Q-QN-18K" secondAttribute="leading" constant="107" id="o2A-DU-XpI"/>
@@ -321,6 +334,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wKY-sD-pS3"/>
                     <connections>
+                        <outlet property="details" destination="kdx-7d-tbM" id="uFN-hm-jPU"/>
                         <outlet property="progressCircle" destination="i2U-AO-RZz" id="5We-i7-Yi1"/>
                         <outlet property="taskName" destination="HF3-z1-agh" id="lQh-gf-Shq"/>
                         <outlet property="taskType" destination="kb6-BL-IuR" id="slT-Re-1xn"/>
