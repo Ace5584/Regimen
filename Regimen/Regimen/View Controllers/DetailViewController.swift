@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selectedData)
         taskName.text = selectedData?[0]
         taskType.text = selectedData?[1]
         progressCircle.trackClr = UIColor.systemTeal

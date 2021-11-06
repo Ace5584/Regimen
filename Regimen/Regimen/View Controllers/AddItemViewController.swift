@@ -17,6 +17,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeSelectionView: UIView!
+    @IBOutlet weak var detailTextField: UITextField!
     let datePicker = UIDatePicker()
     
     @IBAction func didTapSave(){
@@ -32,13 +33,13 @@ class AddItemViewController: UIViewController, UITextFieldDelegate{
         }
         if isTimeBased{
             if textField.text != "" && dateTextField.text != ""{
-                NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType, time, completion])
+                NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType, time, completion, detailTextField.text ?? ""])
                 dismiss(animated: true, completion: nil)
             }
         }
         else{
             if textField.text != ""{
-                NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType, time, completion])
+                NotificationCenter.default.post(name: Notification.Name("Text"), object: [textField.text ?? "", taskType, time, completion, detailTextField.text ?? ""])
                 dismiss(animated: true, completion: nil)
             }
         }
